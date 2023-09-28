@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   numbersOnKeypad: {
     fontFamily: 'Roboto',
-    fontSize: 25,
+    fontSize: 21,
     color: '#5A7FD6',
   },
 });
