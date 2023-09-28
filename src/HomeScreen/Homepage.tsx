@@ -1,7 +1,8 @@
-import { View, Text, Image, ImageBackground, StyleSheet } from 'react-native';
 import React from 'react';
+import { View, Text, Image, ImageBackground, StyleSheet } from 'react-native';
 import CustomText from './CustomText';
 import TravelCustomText from './TravelCustomText';
+import WhiteRectangle from './WhiteRectangle'; 
 
 export default function Homepage() {
   return (
@@ -24,10 +25,12 @@ export default function Homepage() {
             marginLeft: 85,
           }}
         />
-      </ImageBackground>
 
-      {/* Add the white rectangle here */}
-      <WhiteRectangle />
+        
+        <View style={styles.whiteRectangleContainer}>
+          <WhiteRectangle /> 
+        </View>
+      </ImageBackground>
     </View>
   );
 }
@@ -43,16 +46,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     position: 'relative',
   },
-  rectangle: {
-    height: 50,
-    backgroundColor: 'white', // Change the background color to white
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
+  whiteRectangleContainer: {
+    flex: 1,
+    justifyContent: 'flex-end', // Position the white rectangle at the bottom
   },
 });
-
-function WhiteRectangle() {
-  return <View style={styles.rectangle}></View>;
-}
