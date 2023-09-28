@@ -190,14 +190,14 @@ const styles = StyleSheet.create({
   },
   okAndDeleteContainer: {
     justifyContent: 'flex-end',
-    marginTop: 60,
+    marginTop: 20,
   },
   okDeleteButton: {
     marginHorizontal: 70,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 10,
-    marginBottom: 80,
+    marginTop: 15,
+    marginBottom: 100,
   },
   countdownText: {
     fontFamily: 'Roboto',
