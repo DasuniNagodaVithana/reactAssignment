@@ -9,7 +9,7 @@ const CustomText = (props:any) => {
         color:'#FFFFFF',
         fontWeight:'700',
         position:'absolute',
-        marginLeft:10,
+        marginLeft:25,
         marginTop:20,
         marginBottom:40,
       }}>{props.children}</Text>

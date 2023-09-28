@@ -22,7 +22,7 @@ export default function Homepage() {
             top: -15,
             left: 200,
             marginTop: 70,
-            marginLeft: 85,
+            marginLeft: 98,
           }}
         />
 
