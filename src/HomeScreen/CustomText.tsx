@@ -5,12 +5,13 @@ const CustomText = (props:any) => {
   return (
     <View>
       <Text style={{
-        fontSize:40,
+        fontSize:30,
         color:'#FFFFFF',
         fontWeight:'700',
         position:'absolute',
         marginLeft:10,
-        marginTop:20
+        marginTop:20,
+        marginBottom:40,
       }}>{props.children}</Text>
     </View>
   )
