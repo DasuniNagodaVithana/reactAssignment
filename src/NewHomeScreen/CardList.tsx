@@ -4,9 +4,10 @@ import { View, FlatList } from 'react-native';
 import Card from './Card';
 
 interface CardListProps {
-  data: { id: number; image: any; title: string }[]; // Define the correct type for your data
-  onCardPress: (id: number) => void; // Define the function for card press
+  data: { id: number; image: any; titleLine1: string; titleLine2: string; titleLine3: string }[];
+  onCardPress: (id: number) => void;
 }
+
 
 const CardList: React.FC<CardListProps> = ({ data, onCardPress }) => {
   function handleHeartPress(id: number): void {
@@ -21,10 +22,15 @@ const CardList: React.FC<CardListProps> = ({ data, onCardPress }) => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <Card
-            imageSource={item.image}
-            title={item.title}
-            onPress={() => onCardPress(item.id)}
-            onHeartPress={() => handleHeartPress(item.id)} description={''}          />
+  imageSource={item.image}
+  titleLine1={item.titleLine1}
+  titleLine2={item.titleLine2}
+  titleLine3={item.titleLine3}
+  onPress={() => onCardPress(item.id)}
+  onHeartPress={() => handleHeartPress(item.id)}
+  description={''}
+/>
+
         )}
       />
     </View>

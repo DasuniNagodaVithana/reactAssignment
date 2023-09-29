@@ -19,17 +19,23 @@ const ViewPage = () => {
   const cardData = [
     {
       id: 1,
-      title: 'Place 1',
+      titleLine1: 'Line 1',
+      titleLine2: 'Line 2',
+      titleLine3: 'Line 3',
       image: require('../assets/images/image5.jpg'),
     },
     {
       id: 2,
-      title: 'Place 2',
+      titleLine1: 'Line 1',
+      titleLine2: 'Line 2',
+      titleLine3: 'Line 3',
       image: require('../assets/images/image8.jpg'),
     },
     {
       id: 3,
-      title: 'Place 3',
+      titleLine1: 'Line 1',
+      titleLine2: 'Line 2',
+      titleLine3: 'Line 3',
       image: require('../assets/images/image11.png'),
     },
   ];
