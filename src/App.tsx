@@ -10,20 +10,17 @@ import {createDrawerNavigator} from "@react-navigation/drawer"
  
 // screens
 import LockScreen from './NewHomeScreen/LockScreen';
-import Homepage from './NewHomeScreen/Homepage';
 import ViewPage from './NewHomeScreen/Viewpage';
 import Logout from './NewHomeScreen/Logout';
 
 export type RootStackParamList = {
-  LockScreen:any;
-  Homepage:any;
-  Viewpage:any;
-  Logout:any;
+  LockScreen:undefined;
+  Viewpage:undefined;
+  Logout:undefined;
 }
 
-const Stack = createNativeStackNavigator<RootStackParamList>()
-const App = () => {
-  
+const Stack = createNativeStackNavigator<RootStackParamList>();
+function App() {
 
   return (
     
@@ -31,7 +28,6 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="LockScreen">
           <Stack.Screen name="LockScreen" component={LockScreen} />
-          <Stack.Screen name="Homepage" component={Homepage} />
           <Stack.Screen name="Viewpage" component={ViewPage} />
           <Stack.Screen name="Logout" component={Logout} />
         </Stack.Navigator>

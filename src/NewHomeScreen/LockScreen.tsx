@@ -12,10 +12,13 @@ import {
 import PinDot from './PinDot';
 import KeypadButton from './KeypadButton';
 
-import {NativeStackScreenProps} from "@react-navigation/native"
+import {NativeStackScreenProps} from "@react-navigation/native-stack"
+import {RootStackParamList} from '../App'
+
+type LockScreenProps =  NativeStackScreenProps<RootStackParamList,"LockScreen">
 
 
-const LockScreen: React.FC = () => {
+const LockScreen: React.FC<LockScreenProps> = ({navigation}) => {
   // Define the correct PIN
   const correctPIN = '1234';
   // Maximum incorrect
@@ -53,22 +56,25 @@ const LockScreen: React.FC = () => {
 
   const handleOK = () => {
     if (enteredPIN === correctPIN) {
-      Alert.alert('Unlocked', 'You entered the correct password.', [
-        {
-          text: 'OK',
-          onPress: () => {
-            // Reset attempts remaining when correct PIN is entered
-            setRemainingAttempts(maxAttempts);
-            clearDots();
-          },
-        },
-      ]);
+      navigation.navigate('Viewpage');
+      // Alert.alert('Unlocked', 'You entered the correct password.', [
+      //   {
+      //     text: 'OK',
+      //     onPress: () => {
+      //       // Reset attempts remaining when correct PIN is entered
+      //       setRemainingAttempts(maxAttempts);
+      //       clearDots();
+      //     },
+      //   },
+      // ]);
     } else {
+      Alert.alert('Incorrect PIN', 'You entered an incorrect password.');
       handleIncorrectAttempt();
     }
   };
 
   const handleIncorrectAttempt = () => {
+  
     if (remainingAttempts > 1) {
       const message = 'You entered a wrong password.';
       setErrorMessage(message);
@@ -76,9 +82,11 @@ const LockScreen: React.FC = () => {
         {
           text: 'OK',
           onPress: () => {
+        
             clearDots();
             setRemainingAttempts(remainingAttempts - 1);
             setErrorMessage('');
+            
           },
         },
       ]);
