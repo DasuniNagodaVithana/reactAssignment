@@ -4,6 +4,13 @@ import CustomText from './CustomText';
 import TravelCustomText from './TravelCustomText';
 import WhiteRectangle from './WhiteRectangle'; 
 
+import {NativeStackScreenProps} from "@react-navigation/native-stack"
+import {RootStackParamList} from '../App'
+
+type HomeProps =  NativeStackScreenProps<RootStackParamList,'Homepage'>
+const Home = ({navigation}:HomeProps)=>{
+  
+}
 export default function Homepage() {
   return (
     <View style={styles.container}>

@@ -12,6 +12,8 @@ import {
 import PinDot from './PinDot';
 import KeypadButton from './KeypadButton';
 
+import {NativeStackScreenProps} from "@react-navigation/native"
+
 
 const LockScreen: React.FC = () => {
   // Define the correct PIN
