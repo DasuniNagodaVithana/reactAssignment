@@ -1,12 +1,34 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, ScrollView,Image,TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, ScrollView,Image,TouchableOpacity, Text,Button } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {NavigationProp, useNavigation } from '@react-navigation/native';
 import SearchBar from './searchbar';
 import CardList from './CardList'; 
 import RecommendedCardList from './RecommendedCardList';
 
 
+// Define your LogoutScreen component
+const LogoutScreen = () => {
+  // Add the content for your logout page here
+  return (
+    <View>
+      <Text>Logout Page</Text>
+    </View>
+  );
+};
+
+// Create a Drawer Navigator
+const Drawer = createDrawerNavigator();
+type NavigationProps = {
+  navigation: NavigationProp<{ 
+  Viewpage: undefined; 
+    Logout: undefined }>;
+};
+
 const ViewPage:React.FC= () => {
   const [searchText, setSearchText] = useState('');
+  
 
   const handleSearch = (text: string) => {
     setSearchText(text);
@@ -73,6 +95,7 @@ const ViewPage:React.FC= () => {
     // Handle card press here
   };
 
+
   const handleIconPress = (iconIndex: number) => {
     // Handle icon press based on index
     switch (iconIndex) {
@@ -81,6 +104,12 @@ const ViewPage:React.FC= () => {
         break;
       case 1:
         // Handle the second icon press
+        break;
+      // Add more cases for other icons as needed
+
+      case 4: // Handle the fifth icon press (image16.png)
+        // Navigate to the 'logout' page
+        navigation.navigate('Logout');
         break;
       // Add more cases for other icons as needed
     }
@@ -113,11 +142,14 @@ const ViewPage:React.FC= () => {
         </TouchableOpacity>
         <TouchableOpacity onPress={() => handleIconPress(4)}>
         <Image source={require('../assets/images/image16.png')} style={styles.icon} />
+        
         </TouchableOpacity>
       </View>
       </View>
+      
     
   );
+  
 };
 
 

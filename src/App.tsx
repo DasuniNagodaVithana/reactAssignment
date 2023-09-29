@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 //navigation
 import 'react-native-gesture-handler';
 import {NavigationContainer} from "@react-navigation/native"
@@ -20,6 +18,7 @@ export type RootStackParamList = {
 }
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
+const Drawer = createDrawerNavigator();
 function App() {
 
   return (
@@ -29,8 +28,11 @@ function App() {
         <Stack.Navigator initialRouteName="LockScreen">
           <Stack.Screen name="LockScreen" component={LockScreen} />
           <Stack.Screen name="Viewpage" component={ViewPage} />
-          <Stack.Screen name="Logout" component={Logout} />
         </Stack.Navigator>
+        <Drawer.Navigator initialRouteName="ViewPage">
+        <Drawer.Screen name="ViewPage" component={ViewPage} />
+        <Drawer.Screen name="Logout" component={Logout} />
+      </Drawer.Navigator>
       </NavigationContainer>
     );
     

@@ -57,16 +57,16 @@ const LockScreen: React.FC<LockScreenProps> = ({navigation}) => {
   const handleOK = () => {
     if (enteredPIN === correctPIN) {
       navigation.navigate('Viewpage');
-      // Alert.alert('Unlocked', 'You entered the correct password.', [
-      //   {
-      //     text: 'OK',
-      //     onPress: () => {
-      //       // Reset attempts remaining when correct PIN is entered
-      //       setRemainingAttempts(maxAttempts);
-      //       clearDots();
-      //     },
-      //   },
-      // ]);
+      Alert.alert('Unlocked', 'You entered the correct password.', [
+        {
+          text: 'OK',
+          onPress: () => {
+            // Reset attempts remaining when correct PIN is entered
+            setRemainingAttempts(maxAttempts);
+            clearDots();
+          },
+        },
+      ]);
     } else {
       Alert.alert('Incorrect PIN', 'You entered an incorrect password.');
       handleIncorrectAttempt();
