@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { View, StyleSheet, ScrollView,Image,TouchableOpacity, Text } from 'react-native';
 import SearchBar from './searchbar';
 import CardList from './CardList'; 
+import RecommendedCardList from './RecommendedCardList';
 
-const ViewPage = () => {
+
+const ViewPage:React.FC= () => {
   const [searchText, setSearchText] = useState('');
 
   const handleSearch = (text: string) => {
@@ -40,6 +42,33 @@ const ViewPage = () => {
     },
   ];
 
+  const recommendedCardData = [
+    {
+      id: 4,
+      titleLine1: 'Recommended 1',
+      titleLine2: 'Line 2',
+      titleLine3: 'Line 3',
+      image: require('../assets/images/image.jpg'),
+    },
+    {
+      id: 5,
+      titleLine1: 'Recommended 2',
+      titleLine2: 'Line 2',
+      titleLine3: 'Line 3',
+      image: require('../assets/images/image1.jpg'),
+    },
+    {
+      id: 6,
+      titleLine1: 'Recommended 2',
+      titleLine2: 'Line 2',
+      titleLine3: 'Line 3',
+      image: require('../assets/images/image8.jpg'),
+    },
+
+    
+  ];
+  
+
   const handleCardPress = (id: number) => {
     // Handle card press here
   };
@@ -61,11 +90,11 @@ const ViewPage = () => {
     <View style={styles.container}>
     <ScrollView style={styles.container}>
       <SearchBar onSearch={handleSearch} onSubscribe={handleSubscribe} />
-      <Text style={styles.titleText}>Popular Place</Text>
+      <Text style={styles.titleText}>Popular Places</Text>
       <CardList data={cardData} onCardPress={handleCardPress} />
       <Text style={styles.titleText}>Recommended</Text>
       <View style={styles.cardListContainer}>
-        <CardList data={cardData} onCardPress={handleCardPress} />
+      <RecommendedCardList data={recommendedCardData} onCardPress={handleCardPress} />
       </View>
 
     </ScrollView>

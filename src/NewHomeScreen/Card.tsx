@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
 
 interface CardProps {
   imageSource: any;
@@ -8,7 +8,8 @@ interface CardProps {
   titleLine3: string;
   onPress: () => void;
   onHeartPress: () => void;
-  description: string; 
+  description: string;
+  style?: ViewStyle; // Add the style prop here
 }
 
 const Card: React.FC<CardProps> = ({
@@ -19,9 +20,10 @@ const Card: React.FC<CardProps> = ({
   onPress,
   onHeartPress,
   description,
+  style, // Include the style prop in the component
 }) => {
   return (
-    <TouchableOpacity style={styles.card} onPress={onPress}>
+    <TouchableOpacity style={[styles.card, style]} onPress={onPress}>
       <Image source={imageSource} style={styles.image} />
       <View style={styles.overlay}>
         <Text style={styles.titleLine1}>{titleLine1}</Text>

@@ -18,18 +18,27 @@ export type RootStackParamList = {
   LockScreen:any;
   Homepage:any;
   Viewpage:any;
-  Loogout:any;
+  Logout:any;
 }
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 const App = () => {
-  // Your app code here
+  
 
   return (
     
-    <Homepage /> 
     
-  );
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="LockScreen">
+          <Stack.Screen name="LockScreen" component={LockScreen} />
+          <Stack.Screen name="Homepage" component={Homepage} />
+          <Stack.Screen name="Viewpage" component={ViewPage} />
+          <Stack.Screen name="Logout" component={Logout} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+    
+  
 };
 
 export default App;
