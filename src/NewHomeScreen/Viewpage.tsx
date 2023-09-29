@@ -3,6 +3,7 @@ import { View, StyleSheet, ScrollView,Image,TouchableOpacity, Text,Button } from
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationProp, useNavigation } from '@react-navigation/native';
+
 import SearchBar from './searchbar';
 import CardList from './CardList'; 
 import RecommendedCardList from './RecommendedCardList';
@@ -100,7 +101,7 @@ const ViewPage:React.FC= () => {
     // Handle icon press based on index
     switch (iconIndex) {
       case 0:
-        // Handle the first icon press
+        
         break;
       case 1:
         // Handle the second icon press
