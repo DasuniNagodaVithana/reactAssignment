@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, ScrollView,Image,TouchableOpacity } from 'react-native';
+import { View, StyleSheet, ScrollView,Image,TouchableOpacity, Text } from 'react-native';
 import SearchBar from './searchbar';
 import CardList from './CardList'; 
 
@@ -61,8 +61,9 @@ const ViewPage = () => {
     <View style={styles.container}>
     <ScrollView style={styles.container}>
       <SearchBar onSearch={handleSearch} onSubscribe={handleSubscribe} />
-      
+      <Text style={styles.titleText}>Popular Place</Text>
       <CardList data={cardData} onCardPress={handleCardPress} />
+      <Text style={styles.titleText}>Recommended</Text>
       <View style={styles.cardListContainer}>
         <CardList data={cardData} onCardPress={handleCardPress} />
       </View>
@@ -120,7 +121,15 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
   },
+  titleText:{
+    color:"#73CCCC",
+    fontSize:25,
+    marginTop:5,
+    marginLeft:10,
+    padding:5,
+    marginBottom:4
 
+  }
   
 });
 
