@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
@@ -81,3 +82,7 @@ To learn more about React Native, take a look at the following resources:
 =======
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/UItBJeiG)
 >>>>>>> 91e9f0ceef6d317ccd3dfc90dd6ccfbea6be4d49
+=======
+# reactAssignment
+Copy of Actual Assignment
+>>>>>>> new-origin/main
